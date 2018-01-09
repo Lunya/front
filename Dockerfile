@@ -18,6 +18,6 @@ COPY . .
 RUN npm install
 RUN npm run prod
 
-RUN mv /tmp/app/ops /var/www/public
+RUN mv /tmp/app/ops/* /var/www/public
 
 
