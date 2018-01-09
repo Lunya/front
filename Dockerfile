@@ -11,15 +11,9 @@ RUN chmod +x /usr/local/bin/n
 RUN n latest
 
 RUN mkdir /tmp/app
-COPY dev /tmp/app
-
-RUN mkdir /tmp/webpack
-COPY webpack /tmp/webpack/
-
-COPY .babelrc /tmp/webpack
-COPY package.json /tmp/webpack
-
 WORKDIR /tmp/app
+
+COPY . .
 
 RUN npm install
 RUN npm run prod
