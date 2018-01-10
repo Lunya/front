@@ -23,15 +23,15 @@ export default class Home extends React.Component {
 				</Row>
 				<Row>
 					<Col sm={12} md={4}>
-						<div className="centered"><Image src="../img/record.svg" height="125" width="125" rounded /></div>
+						<div className="centered"><Image src="img/record.svg" height="125" width="125" rounded /></div>
 						<div className="image-description-element"><b>Record</b> your end to end test scenario using our <a href="https://chrome.google.com/webstore/detail/wat-chrome-plugin/fopllklfdgccljiagdpeocpdnhlmlakc">Chrome Plugin.</a></div>
 					</Col>
 					<Col sm={12} md={4}>
-						<div className="centered"><Image src="../img/replay.svg" height="125" width="125" rounded /></div>
+						<div className="centered"><Image src="img/replay.svg" height="125" width="125" rounded /></div>
 						<div className="image-description-element"><b>Replay</b> your end to end test scenario <b>on demand or scheduled</b> every day.</div>
 					</Col>
 					<Col sm={12} md={4}>
-						<div className="centered"><Image src="../img/check.svg" height="125" width="125" rounded /></div>
+						<div className="centered"><Image src="img/check.svg" height="125" width="125" rounded /></div>
 						<div className="image-description-element"><b>Get notified</b> if your end to end test scenario is <b>a success or a failure</b>.</div>
 					</Col>
 				</Row>
@@ -39,7 +39,7 @@ export default class Home extends React.Component {
 					<Col>
 						<h2 className="category-title">Demo</h2>
 						<div>
-							<video className="centered-video" src="../img/demo.mp4" autoPlay controls loop width="800"/>
+							<video className="centered-video" src="img/demo.mp4" autoPlay controls loop width="800"/>
 						</div>
 					</Col></Row>
 				<Row>

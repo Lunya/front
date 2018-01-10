@@ -23,4 +23,6 @@ RUN mkdir /var/www/public
 
 RUN mv /tmp/app/ops/app/* /var/www/public
 
+COPY dev/app/img/demo.mp4 ops/app/img/
+
 

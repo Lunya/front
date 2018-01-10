@@ -43,8 +43,8 @@ export default class Run extends React.Component {
 	}
 
 	render() {
-		var success = <img src="../img/success.png"/>;
-		var failure = <img src="../img/failure.png"/>;
+		var success = <img src="img/success.png"/>;
+		var failure = <img src="img/failure.png"/>;
 		var scenarioName = this.state.scenario ? this.state.scenario.name : '... featching scenario';
 		var date = dateFormat(this.state.run.date, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
 		var screenPath = `img/screen/${this.state.run._id}.png`;
