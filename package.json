@@ -1,7 +1,7 @@
 {
-  "name": "wat_reverse",
+  "name": "wat_front",
   "version": "1.0.0",
-  "description": "WAT Reverse Proxy",
+  "description": "WAT FRONT",
   "main": "ops/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webautotester/reverse.git"
+    "url": "git+https://github.com/webautotester/front.git"
   },
   "author": "Xavier Blanc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/webautotester/reverse/issues"
+    "url": "https://github.com/webautotester/front/issues"
   },
-  "homepage": "https://github.com/webautotester/reverse#readme",
+  "homepage": "https://github.com/webautotester/front#readme",
   "dependencies": {
     "axios": "^0.17.1",
     "js-sha256": "^0.9.0",
