@@ -25,7 +25,6 @@ RUN mkdir /var/www/public
 
 RUN mv /tmp/app/ops/app/* /var/www/public
 
-CMD ["bash", "./letsencrypt_and_start_nginx.sh"]
 
 
 
