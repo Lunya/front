@@ -33,20 +33,13 @@ export function login(credentials) {
 
 export function logout() {
 	return new Promise((resolve, reject) => {
-		const url = `${BASE_URL}/api/logout`;
-		axios.get(url)
-			.then(response => {
-				sessionStorage.removeItem('logged');
-				sessionStorage.removeItem('username');
-				sessionStorage.removeItem('jwt');
+		sessionStorage.removeItem('logged');
+		sessionStorage.removeItem('username');
+		sessionStorage.removeItem('jwt');
 
-				listeners.forEach((f) => f(false));
+		listeners.forEach((f) => f(false));
 
-				resolve(response);
-			})
-			.catch(err => {
-				reject(err);
-			});
+		resolve('logout');
 	});
 }
 
