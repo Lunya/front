@@ -47,7 +47,7 @@ export function isLoggedIn() {
 	return sessionStorage.getItem('logged') ? sessionStorage.getItem('logged') : false;
 }
 
-export function signin(credentials) {
+export function signup(credentials) {
 	return new Promise((resolve, reject) => {
 		const url = `${BASE_URL}/api/signup`;
 		axios.post(url, credentials)
