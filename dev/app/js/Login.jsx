@@ -4,8 +4,6 @@ import { Redirect } from 'react-router-dom';
 
 import { FormGroup, FormControl, ControlLabel, Button, Alert } from 'react-bootstrap';
 
-import { sha256 } from 'js-sha256';
-
 export default class Login extends React.Component {
 
 	constructor(props) {
@@ -14,7 +12,7 @@ export default class Login extends React.Component {
 			redirect : false,
 			credential : {
 				username : '',
-				password : sha256('')
+				password : ''
 			},
 			message : null
 		};
@@ -39,7 +37,8 @@ export default class Login extends React.Component {
 				redirect: false,
 				credential: {
 					username: prevState.credential.username, 
-					password: sha256(eventValue)},
+					password: eventValue
+				},
 				message: null};
 			}
 		});

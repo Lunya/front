@@ -49,7 +49,7 @@ export function isLoggedIn() {
 
 export function signin(credentials) {
 	return new Promise((resolve, reject) => {
-		const url = `${BASE_URL}/api/signin`;
+		const url = `${BASE_URL}/api/signup`;
 		axios.post(url, credentials)
 			.then(response => {
 				switch (response.status) {
