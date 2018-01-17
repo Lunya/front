@@ -1,5 +1,5 @@
 FROM nginx:latest
-MAINTAINER Xavier Blanc <blancxav@gmail.com>
+LABEL maintainer="Xavier Blanc <blancxav@gmail.com>"
 
 COPY nginx_debug.conf /etc/nginx/nginx.conf
 
