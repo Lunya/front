@@ -2,7 +2,7 @@ import React from 'react';
 import {isLoggedIn, login} from './authenticationService.js';
 import { Redirect } from 'react-router-dom';
 
-import { FormGroup, FormControl, ControlLabel, Button, Alert } from 'react-bootstrap';
+import { FormGroup, FormControl, ControlLabel, Button, Alert, Row } from 'react-bootstrap';
 
 export default class Login extends React.Component {
 
@@ -87,18 +87,26 @@ export default class Login extends React.Component {
 					</Alert>;
 				}
 				return (
-					<form onSubmit={this.handleSubmit} className="centered-form">
-						<FormGroup>
-							<ControlLabel>Username</ControlLabel>
-							<FormControl id="username" type="text" value={this.state.username} onChange={this.handleChange}/>
-						</FormGroup>
-						<FormGroup>
-							<ControlLabel>Password</ControlLabel>
-							<FormControl id="password" type="password" value={this.state.password} onChange={this.handleChange}/>
-						</FormGroup>
-						<Button type="submit">Log In</Button>
-						{errorMessage}
-					</form>
+					<div>
+						<Row>
+							<a href="api/github">Log With GitHub</a>
+						</Row>
+						<Row>
+							<form onSubmit={this.handleSubmit} className="centered-form">
+								<FormGroup>
+									<ControlLabel>Username</ControlLabel>
+									<FormControl id="username" type="text" value={this.state.username} onChange={this.handleChange}/>
+								</FormGroup>
+								<FormGroup>
+									<ControlLabel>Password</ControlLabel>
+									<FormControl id="password" type="password" value={this.state.password} onChange={this.handleChange}/>
+								</FormGroup>
+								<Button type="submit">Log In</Button>
+								{errorMessage}
+							</form>
+						</Row>
+						
+					</div>
 				);
 			}
 		}

@@ -70,3 +70,28 @@ export function signup(credentials) {
 export function addListenerOnLogin(callback) {
 	listeners.push(callback);
 }
+
+export function getJWTFromGitHubSession() {
+	return new Promise((resolve, reject) => {
+		const url = `${BASE_URL}/api/github/jwt`;
+		axios.get(url)
+			.then(response => {
+				if (response.status === 401) {
+					resolve(false);
+				} else {
+					sessionStorage.setItem('logged', true);
+					console.log(response.data);
+					console.log(response.data._id);
+					sessionStorage.setItem('username', response.data.username);
+					sessionStorage.setItem('jwt',response.data.jwt);
+
+					listeners.forEach((f) => f(true));
+
+					resolve(true);
+				}
+			})
+			.catch(err => {
+				reject(err);
+			});
+	});
+}

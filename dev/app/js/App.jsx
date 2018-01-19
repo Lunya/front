@@ -8,6 +8,7 @@ import Login from './Login.jsx';
 import Signup from './Signup.jsx';
 import Logout from './Logout.jsx';
 import About from './About.jsx';
+import GitHub from './GitHub.jsx';
 import {isLoggedIn, addListenerOnLogin} from './authenticationService.js';
 
 import {Nav, Navbar, NavItem, Grid} from 'react-bootstrap';
@@ -96,6 +97,7 @@ class App extends React.Component {
 						<Route path="/scenario" component={ScenarioList} />
 						<Route path="/run" component={RunList} />
 						<Route path="/about" component={About} />
+						<Route path="/github" component={GitHub} />
 					</Grid>
 				</div>
 			</Router>
