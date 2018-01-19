@@ -2,7 +2,7 @@ import React from 'react';
 import {isLoggedIn, login} from './authenticationService.js';
 import { Redirect } from 'react-router-dom';
 
-import { FormGroup, FormControl, ControlLabel, Button, Alert, Row } from 'react-bootstrap';
+import { FormGroup, FormControl, ControlLabel, Button, Alert, Row , Image} from 'react-bootstrap';
 
 export default class Login extends React.Component {
 
@@ -89,7 +89,7 @@ export default class Login extends React.Component {
 				return (
 					<div>
 						<Row>
-							<a href="api/github"> <img src="img/github.png" width="200"/>Log With Your GitHub Account</a>
+							<a href="api/github"> <Image src="img/github.png" width="150" rounded/>Log With Your GitHub Account</a>
 						</Row>
 						<Row>
 							<h1>Log With Your WAT Account</h1>

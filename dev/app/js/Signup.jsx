@@ -1,7 +1,7 @@
 import React from 'react';
 import {isLoggedIn, signup} from './authenticationService.js';
 
-import { FormGroup, FormControl, ControlLabel, Button, Alert } from 'react-bootstrap';
+import { FormGroup, FormControl, ControlLabel, Button, Alert, Image } from 'react-bootstrap';
 
 export default class Login extends React.Component {
 
@@ -79,7 +79,7 @@ export default class Login extends React.Component {
 			return (
 				<div>
 					<Row>
-						<a href="api/github"> <img src="img/github.png" width="200"/>Register With Your GitHub Account</a>
+						<a href="api/github"> <Image src="img/github.png" width="150" rounded/>Register With Your GitHub Account</a>
 					</Row>
 					<Row>
 						<h1>Create Your WAT Account</h1>
