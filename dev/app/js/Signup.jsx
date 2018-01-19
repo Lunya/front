@@ -97,7 +97,7 @@ export default class Login extends React.Component {
 						<Col xs={6} md={4}>
 							With Your GitHub Account
 							<br/>
-							<a href="api/github"> <Image src="img/github.png" width="150" rounded/></a>
+							<a href="api/github"> <Image src="img/github.png" width="100" rounded/></a>
 						</Col>
 					</Row>
 				</Grid>
