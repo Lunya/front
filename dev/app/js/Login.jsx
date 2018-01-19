@@ -89,9 +89,10 @@ export default class Login extends React.Component {
 				return (
 					<div>
 						<Row>
-							<a href="api/github"> <img src="img/github.png" width="200"/>Log With GitHub</a>
+							<a href="api/github"> <img src="img/github.png" width="200"/>Log With Your GitHub Account</a>
 						</Row>
 						<Row>
+							<h1>Log With Your WAT Account</h1>
 							<form onSubmit={this.handleSubmit} className="centered-form">
 								<FormGroup>
 									<ControlLabel>Username</ControlLabel>

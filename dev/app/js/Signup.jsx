@@ -77,18 +77,26 @@ export default class Login extends React.Component {
 				</Alert>;
 			}
 			return (
-				<form onSubmit={this.handleSubmit} className="centered-form">
-					<FormGroup>
-						<ControlLabel>Username</ControlLabel>
-						<FormControl id="username" type="text" value={this.state.username} onChange={this.handleChange}/>
-					</FormGroup>
-					<FormGroup>
-						<ControlLabel>Password</ControlLabel>
-						<FormControl id="password" type="password" value={this.state.password} onChange={this.handleChange}/>
-					</FormGroup>
-					<Button type="submit">Sign Up</Button>
-					{errorMessage}
-				</form>
+				<div>
+					<Row>
+						<a href="api/github"> <img src="img/github.png" width="200"/>Register With Your GitHub Account</a>
+					</Row>
+					<Row>
+						<h1>Create Your WAT Account</h1>
+						<form onSubmit={this.handleSubmit} className="centered-form">
+							<FormGroup>
+								<ControlLabel>Username</ControlLabel>
+								<FormControl id="username" type="text" value={this.state.username} onChange={this.handleChange}/>
+							</FormGroup>
+							<FormGroup>
+								<ControlLabel>Password</ControlLabel>
+								<FormControl id="password" type="password" value={this.state.password} onChange={this.handleChange}/>
+							</FormGroup>
+							<Button type="submit">Sign Up</Button>
+							{errorMessage}
+						</form>
+					</Row>
+				</div>
 			);
 		}
 	}
