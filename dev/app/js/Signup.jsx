@@ -77,27 +77,30 @@ export default class Login extends React.Component {
 				</Alert>;
 			}
 			return (
-				<div>
+				<Grid>
 					<Row>
-						<h1>Register With Your GitHub Account</h1>
-						<a href="api/github"> <Image src="img/github.png" width="150" rounded/></a>
+						<Col xs={12} md={8}>
+							<form onSubmit={this.handleSubmit} className="centered-form">
+							Create Your WAT Account
+								<FormGroup>
+									<ControlLabel>Username</ControlLabel>
+									<FormControl id="username" type="text" value={this.state.username} onChange={this.handleChange}/>
+								</FormGroup>
+								<FormGroup>
+									<ControlLabel>Password</ControlLabel>
+									<FormControl id="password" type="password" value={this.state.password} onChange={this.handleChange}/>
+								</FormGroup>
+								<Button type="submit">Sign Up</Button>
+								{errorMessage}
+							</form>
+						</Col>
+						<Col xs={6} md={4}>
+							With Your GitHub Account
+							<br>
+							<a href="api/github"> <Image src="img/github.png" width="150" rounded/></a>
+						</Col>
 					</Row>
-					<Row>
-						<h1>Create Your WAT Account</h1>
-						<form onSubmit={this.handleSubmit} className="centered-form">
-							<FormGroup>
-								<ControlLabel>Username</ControlLabel>
-								<FormControl id="username" type="text" value={this.state.username} onChange={this.handleChange}/>
-							</FormGroup>
-							<FormGroup>
-								<ControlLabel>Password</ControlLabel>
-								<FormControl id="password" type="password" value={this.state.password} onChange={this.handleChange}/>
-							</FormGroup>
-							<Button type="submit">Sign Up</Button>
-							{errorMessage}
-						</form>
-					</Row>
-				</div>
+				</Grid>
 			);
 		}
 	}
