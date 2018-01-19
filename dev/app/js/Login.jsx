@@ -89,7 +89,8 @@ export default class Login extends React.Component {
 				return (
 					<div>
 						<Row>
-							<a href="api/github"> <Image src="img/github.png" width="150" rounded/>Log With Your GitHub Account</a>
+							<h1>Log With Your GitHub Account</h1>
+							<a href="api/github"> <Image src="img/github.png" width="150" rounded/></a>
 						</Row>
 						<Row>
 							<h1>Log With Your WAT Account</h1>
