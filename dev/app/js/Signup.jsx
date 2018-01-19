@@ -1,7 +1,7 @@
 import React from 'react';
 import {isLoggedIn, signup} from './authenticationService.js';
 
-import { FormGroup, FormControl, ControlLabel, Button, Alert, Row, Image } from 'react-bootstrap';
+import { FormGroup, FormControl, ControlLabel, Button, Alert, Row, Image, Grid, Col} from 'react-bootstrap';
 
 export default class Login extends React.Component {
 
