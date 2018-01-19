@@ -2,7 +2,7 @@ import React from 'react';
 import {isLoggedIn, login} from './authenticationService.js';
 import { Redirect } from 'react-router-dom';
 
-import { FormGroup, FormControl, ControlLabel, Button, Alert, Row , Image} from 'react-bootstrap';
+import { FormGroup, FormControl, ControlLabel, Button, Alert, Row , Image, Col, Grid} from 'react-bootstrap';
 
 export default class Login extends React.Component {
 
@@ -87,28 +87,29 @@ export default class Login extends React.Component {
 					</Alert>;
 				}
 				return (
-					<div>
+					<Grid>
 						<Row>
-							<h1>Log With Your GitHub Account</h1>
-							<a href="api/github"> <Image src="img/github.png" width="150" rounded/></a>
+							<Col xs={12} md={8}>
+								Log With Your WAT Account
+								<form onSubmit={this.handleSubmit} className="centered-form">
+									<FormGroup>
+										<ControlLabel>Username</ControlLabel>
+										<FormControl id="username" type="text" value={this.state.username} onChange={this.handleChange}/>
+									</FormGroup>
+									<FormGroup>
+										<ControlLabel>Password</ControlLabel>
+										<FormControl id="password" type="password" value={this.state.password} onChange={this.handleChange}/>
+									</FormGroup>
+									<Button type="submit">Log In</Button>
+									{errorMessage}
+								</form>
+							</Col>
+							<Col xs={6} md={4}>
+								With Your GitHub Account
+								<a href="api/github"> <Image src="img/github.png" width="100" rounded/></a>
+							</Col>
 						</Row>
-						<Row>
-							<h1>Log With Your WAT Account</h1>
-							<form onSubmit={this.handleSubmit} className="centered-form">
-								<FormGroup>
-									<ControlLabel>Username</ControlLabel>
-									<FormControl id="username" type="text" value={this.state.username} onChange={this.handleChange}/>
-								</FormGroup>
-								<FormGroup>
-									<ControlLabel>Password</ControlLabel>
-									<FormControl id="password" type="password" value={this.state.password} onChange={this.handleChange}/>
-								</FormGroup>
-								<Button type="submit">Log In</Button>
-								{errorMessage}
-							</form>
-						</Row>
-						
-					</div>
+					</Grid>
 				);
 			}
 		}
