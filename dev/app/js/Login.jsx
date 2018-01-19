@@ -90,8 +90,9 @@ export default class Login extends React.Component {
 					<Grid>
 						<Row>
 							<Col xs={12} md={8}>
-								Log With Your WAT Account
+								
 								<form onSubmit={this.handleSubmit} className="centered-form">
+									Log With Your WAT Account
 									<FormGroup>
 										<ControlLabel>Username</ControlLabel>
 										<FormControl id="username" type="text" value={this.state.username} onChange={this.handleChange}/>
@@ -106,6 +107,7 @@ export default class Login extends React.Component {
 							</Col>
 							<Col xs={6} md={4}>
 								With Your GitHub Account
+								<br>
 								<a href="api/github"> <Image src="img/github.png" width="100" rounded/></a>
 							</Col>
 						</Row>
