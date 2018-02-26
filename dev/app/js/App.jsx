@@ -9,6 +9,7 @@ import Signup from './Signup.jsx';
 import Logout from './Logout.jsx';
 import About from './About.jsx';
 import GitHub from './GitHub.jsx';
+import GroupList from './group/GroupList';
 import {isLoggedIn, addListenerOnLogin} from './authenticationService.js';
 
 import {Nav, Navbar, NavItem, Grid} from 'react-bootstrap';
@@ -41,6 +42,11 @@ class App extends React.Component {
 					<Nav>
 						<LinkContainer to="/scenario" >
 							<NavItem eventKey={5}>Scenario</NavItem>
+						</LinkContainer>
+					</Nav>
+					<Nav>
+						<LinkContainer to="/group" >
+							<NavItem eventKey={8}>Group</NavItem>
 						</LinkContainer>
 					</Nav>
 					<Nav>
@@ -98,6 +104,7 @@ class App extends React.Component {
 						<Route path="/run" component={RunList} />
 						<Route path="/about" component={About} />
 						<Route path="/github" component={GitHub} />
+						<Route path="/group" component={GroupList} />
 					</Grid>
 				</div>
 			</Router>
