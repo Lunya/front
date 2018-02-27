@@ -3,8 +3,10 @@ import { Row, Col, PageHeader, Accordion, Button } from 'react-bootstrap';
 import Loader from 'react-loader';
 import Group from './Group';
 import GroupModal from './GroupModal';
+import axios from 'axios';
 
 const REFRESH_TEMPO = 10000;
+const BASE_URL = `${location.protocol}//${location.hostname}${location.port ? ':'+location.port : ''}`;
 
 export default class GroupList extends React.Component {
 	constructor(props) {
@@ -24,6 +26,7 @@ export default class GroupList extends React.Component {
 		this.setState({ loaded: false });
 
 		new Promise(resolve => {
+			//axios.get(`${BASE_URL}/api/group`, { headers: {'Authorization': `Bearer ${sessionStorage.getItem('jwt')}`}})
 			resolve([{
 				_id: 'qjdvnkqdvbkqdbcn',
 				name: 'aaa',
