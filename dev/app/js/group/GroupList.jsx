@@ -89,11 +89,19 @@ export default class GroupList extends React.Component {
 		}
 	}
 
+	onDeleteGroup(groupId) {
+		console.log(`Delete group id:${groupId}`);
+		//axios.delete(`${BASE_URL}/api/group/${groupId}`);
+	}
+
 	render() {
 		let groups;
 		if (this.state.groups.length) {
 			groups = this.state.groups.map((group, i) =>
-				<Group index={i + 1} group={group} onModify={() => this.onModifyGroup(group._id)} key={group._id} eventKey={i} />);
+				<Group index={i + 1} group={group}
+					onModify={() => this.onModifyGroup(group._id)}
+					onDelete={() => this.onDeleteGroup(group._id)}
+					key={group._id} eventKey={i} />);
 		} else {
 			groups = (
 				<div>
