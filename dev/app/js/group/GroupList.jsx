@@ -85,7 +85,10 @@ export default class GroupList extends React.Component {
 				groupModalShow: true,
 				groupModalValue: group
 			});
-			this.groupModal.setState({ group: group });
+			this.groupModal.setState({
+				group: group,
+				newGroup: false
+			});
 		}
 	}
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Panel, Row, Col, Button } from 'react-bootstrap';
+import { Panel, Row, Col, Button, OverlayTrigger, Popover } from 'react-bootstrap';
 
 export default class Group extends React.Component {
 	constructor(props) {
@@ -8,9 +8,11 @@ export default class Group extends React.Component {
 
 		this.state = {
 			group: group,
-			onModify: props.onModify ||  null,
-			onDelete: props.onDelete ||  null
+			onModify: props.onModify || null,
+			onDelete: props.onDelete || null
 		};
+
+		this.overlay = null;
 	}
 
 	onModify() {
@@ -19,6 +21,7 @@ export default class Group extends React.Component {
 
 	onDelete() {
 		this.state.onDelete & this.state.onDelete();
+		this.overlay.setState({ show: false });
 	}
 
 	render() {
@@ -33,10 +36,16 @@ export default class Group extends React.Component {
 			<li key={scenario._id}>{scenario.name}</li>);
 
 		const header = `${name}`;
+
+		const popoverConfirmation = (<Popover id="popoverConfirmation">
+			<p>Do you really want to delete this group ?</p>
+			<Button bsStyle="danger" onClick={this.onDelete.bind(this)}>Yes</Button>
+			<Button onClick={() => this.overlay.setState({ show: false })}>No</Button>
+		</Popover>);
 		return (
 			<Panel header={header} {...divProps}>
 				<Row>
-					<Col xs={12} md={8}>
+					<Col xs={12} md={10}>
 						<h2>Scenarii</h2>
 						<ul>
 							{scenarii}
@@ -44,9 +53,11 @@ export default class Group extends React.Component {
 					</Col>
 					<Col xs={12} md={2}>
 						<Button onClick={this.onModify.bind(this)}>Modify</Button>
-					</Col>
-					<Col xs={12} md={2}>
-						<Button onClick={this.onDelete.bind(this)}>Delete</Button>
+						<OverlayTrigger trigger="click" placement="top"
+							ref={(overlay) => this.overlay = overlay}
+							overlay={popoverConfirmation} rootClose={true}>
+							<Button bsStyle="danger">Delete</Button>
+						</OverlayTrigger>
 					</Col>
 				</Row>
 			</Panel>
